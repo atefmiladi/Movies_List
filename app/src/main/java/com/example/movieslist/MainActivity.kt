@@ -19,7 +19,7 @@ import com.example.movieslist.views.MovieCard
 
 class MainActivity : ComponentActivity() {
 
-  
+    private val movieViewModel by viewModels<MovieViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+
+                    MovieList(moviesList = movieViewModel.moviesList)
+                    movieViewModel.getAllMovies()
 
                 }
             }

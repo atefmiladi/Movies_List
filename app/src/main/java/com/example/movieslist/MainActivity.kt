@@ -10,7 +10,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.movieslist.models.Movie
 import com.example.movieslist.ui.theme.MoviesListTheme
+import com.example.movieslist.views.MovieCard
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     MoviesListTheme {
-        Greeting("Android")
+        val movie = Movie(name = "Movie1", desc = "this is desc", imgUrl ="https://howtodoandroid.com/images/dunkirk.jpg", category = "Horror")
+        MovieCard(movie = movie)
     }
 }
